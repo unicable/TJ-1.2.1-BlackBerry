@@ -12,7 +12,7 @@
 MF
 </author>
 <rim:navigation mode="focus" />
-<description>Diario Digital - Jujuy, Argentina - Version 1.2.1</description>
+<description>Diario Digital - Jujuy, Argentina - Version 1.2.1 para BlackBerry</description>
 
 <rim:loadingScreen backgroundImage="splash.png"
 				 foregroundImage="foreground.gif"
