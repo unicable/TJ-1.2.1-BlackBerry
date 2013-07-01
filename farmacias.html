@@ -45,57 +45,19 @@
 		  error:function() {
 		  alert('Se ha producido un error al obtener la información actualizada. Intentelo nuevamente en unos instantes.');
 	  },
-		});	
-		
-		//Cargamos secciones
-		$.ajax({
-		  url : 'http://webservices.todojujuy.com/index.php?op=secciones&callback=?',
-		  dataType : 'jsonp',
-		  success:function(data) {		  
-			  $.each(data.respData,function(index,value) {				  
-				  $('#lista_secciones').append('<div class="item"><a href="secciones.html?sid='+value.id+'">'+value.valor+'</a></div>');			  
-			  });
-			  $('#lista_secciones').append('<a href="javascript:ocultarMenu();"><div id="ocultar_menu_seccion"></div></a>');
-		  },
-		  error:function() {
-			  alert('Se ha producido un error al obtener la información actualizada. Intentelo nuevamente en unos instantes.');
-		  }
-		});				
+		});						
   	});
-	
-	$(document).ready(function(e) {
-		$('#menu_secciones').click(function() { 
-			$('#secciones').toggle( 'blind' );
-		});
-	});
-	
-	function ocultarMenu() {
-		$('#secciones').toggle( "blind" );
-	};
-	
+
 	function vermapa(id) {
 		$('#mapa_oculto_'+id).toggle();
 		if ($('#mapa_oculto_'+id).is(":visible")) $('#link_mostrar_'+id).html('Ocultar Mapa');
 		else $('#link_mostrar_'+id).html('Mostrar Mapa');
 	};
 document.addEventListener("deviceready", deviceInfo, true);
-document.addEventListener("backbutton", function(e){
-	navigator.app.exitApp();		
-}, false);
 
 function exitAppPopup() {
-	navigator.notification.confirm(
-		  'Salir de TodoJujuy.com?'
-		, function(button) {
-			  if (button == 2) {
-				  navigator.app.exitApp();
-			  }
-		  }
-		, 'Salir'
-		, 'No,Si'
-	);  
-	return false;
-}		
+	blackberry.app.exit();
+}	
 </script>
 </head>
 
@@ -109,31 +71,20 @@ function exitAppPopup() {
     <a href="index.html"><img src="img/logo.png" width="140" height="38" /></a>
     </div>
     <div class="m3">
-    <div id="menu_secciones"><img src="img/menu.png" width="30" height="30" /></div>    
+    <div id="menu_secciones"><img src="img/blank.png" width="30" height="30" /></div>    
     </div>
     <div class="separador"></div>    
 </div>
-<div id="secciones">
-	<div class="lista_titulo">Selecciona la sección</div>
-    <div id="lista_secciones"></div>
-</div>
 <div id="cargando">Cargando contenido, espere por favor...</div>
 <div id="sitewrap" style="margin:10px 0">
-<div id="content">	
-    <div class="wrapper-outer">
-        <div class="content-wrapper">
-        	<div id="titular" class="titulo_pagina" style="display:none">Farmacias de Turno</div>        	
-        	<div id="contenido"></div>
+    <div id="content">	
+        <div class="wrapper-outer">
+            <div class="content-wrapper">
+                <div id="titular" class="titulo_pagina" style="display:none">Farmacias de Turno</div>        	
+                <div id="contenido"></div>
+            </div>
         </div>
     </div>
 </div>
-</div>
-<div id="footer"><div id="menu_bottom">
-	<div class="item"><a href="#top"><img src="img/b_subir.png" width="30" height="30" /></a><div class="titulo">SUBIR</div></div>
-    <div class="item"><a href="farmacias.html"><img src="img/b_farmacia.png" width="30" height="30" /></a><div class="titulo">FARMACIAS</div></div>
-    <div class="item"><a href="cines.html"><img src="img/b_peli.png" width="30" height="30" /></a><div class="titulo">CINES</div></div>
-    <div class="item"><a href="clima.html?cod=332473"><img src="img/b_clima.png" width="30" height="30" /></a><div class="titulo">EL TIEMPO</div></div>
-    <div class="item"><a href="javascript:exitAppPopup();"><img src="img/b_salir.png" width="30" height="30" /></a><div class="titulo">SALIR</div></div>
-</div></div>
 </body>
 </html>
