@@ -30,7 +30,7 @@ MF
 <icon src="icon.png" />
 <icon src="res/img/logo.png" gap:platform="blackberry" />
 <gap:splash src="splash.png" />
-<gap:splash src="splash/bb/splash.png" gap:platform="blackberry" />
+<gap:splash src="res/splash/bb/splash.png" gap:platform="blackberry" />
 
 <preference name="orientation" value="portrait" />
 <preference name="FadeSplashScreen" value="true" />
