@@ -28,8 +28,10 @@ MF
 </rim:connection>
  
 <icon src="icon.png" />
-<icon src="res/img/logo.png" gap:platform="android" gap:density="ldpi" />
-<icon src="res/img/logo.png" gap:platform="android" gap:density="mdpi" />
+<icon src="res/img/logo.png" gap:platform="blackberry" />
+<gap:splash src="splash.png" />
+<gap:splash src="splash/bb/splash.png" gap:platform="blackberry" />
+
 <preference name="orientation" value="portrait" />
 <preference name="FadeSplashScreen" value="true" />
 <preference name="FadeSplashScreenDuration" value="2" />
